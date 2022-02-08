@@ -1,6 +1,5 @@
-from LoadBalancer import LoadBalancer
+from load_balancer import LoadBalancer
 import threading
-import time
 import heapq
 from datetime import datetime, timedelta
 from random import random 
@@ -15,7 +14,7 @@ class AdvancedLoadBalancer(LoadBalancer):
         self.load = [0 for _ in servers]
         self.queue = []
         releasor = threading.Thread(target = self.clean_requests)
-        releasor.setDaemon(True)
+        releasor.daemon = True
         releasor.start()
 
     

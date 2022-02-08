@@ -1,48 +1,10 @@
-from LoadBalancer import LoadBalancer
-from config import server_ids
-from AdvancedLoadBalancer import AdvancedLoadBalancer
-import time
+from config import server_ids, type
+from load_balancer_factory import LoadBalancerFactory
 
 
 def main():
-    lb = AdvancedLoadBalancer(server_ids)
+    lb = LoadBalancerFactory().get_factory(type, server_ids)
     print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.send_request())
-    print(lb.load)
-    time.sleep(1)
-    print(lb.load)
-    time.sleep(1)
-    print(lb.load)
-    time.sleep(1)
-    print(lb.load)
-    time.sleep(1)
-    print(lb.load)
-    time.sleep(1)
-    print(lb.load)
-    time.sleep(1)
-    print(lb.load)
-    time.sleep(1)
-    print(lb.load)
-    time.sleep(1)
-    print(lb.load)
 
 
 if __name__ == "__main__":
